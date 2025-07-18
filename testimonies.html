@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Testimonies | Addis Ababa Rising</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Addis Ababa Rising</h1>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./gallery.html">Gallery</a></li>
+        <li><a href="./testimonies.html" class="active">Testimonies</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Hear the Voices</h2>
+    <p>Submit your story and witness history built by the people.</p>
+
+    <form name="testimony-form" method="POST" data-netlify="true">
+      <label for="name">Name (optional):</label>
+      <input id="name" type="text" name="name" />
+
+      <label for="testimony">Your Testimony:</label>
+      <textarea id="testimony" name="testimony" rows="6" required></textarea>
+
+      <button type="submit">Share My Story</button>
+    </form>
+
+    <section>
+      <p>Thank you for standing with us. Your voice matters.</p>
+    </section>
+
+    <section class="petition">
+      <h2>Sign the Petition</h2>
+      <p>Join the worldwide call for justice and restoration.</p>
+      <form name="kazanchis-petition" method="POST" data-netlify="true">
+        <label for="p-name">Name:</label>
+        <input id="p-name" name="name" type="text" required />
+
+        <label for="p-location">Location:</label>
+        <input id="p-location" name="location" type="text" />
+
+        <label for="p-message">Message:</label>
+        <textarea id="p-message" name="message" rows="4"></textarea>
+
+        <button type="submit">Sign Petition</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Addis Ababa Rising. All rights reserved.</p>
+  </footer>
+</body>
+</html>
