@@ -3,49 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Addis Ababa Rising | Kazanchis Will Rise Again</title>
+  <title>Contact & Contribute</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Addis Ababa Rising</h1>
+    <h1>Contact & Contribute</h1>
     <nav>
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="testimonies.html">Testimonies</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <h2>“Kazanchis: The Heartbeat That Refuses to Die.”</h2>
-      <p>We are the descendants of builders, poets, warriors, and mothers who birthed modern Ethiopia from stone and spirit. This is their story — and ours.</p>
+      <h2>We Are Still Here</h2>
+      <p>Want to share a memory, testimony, or photo? Reach out — this archive lives because of you.</p>
     </section>
 
-    <section class="tribute">
-      <h3>🏛️ Our Fallen Heritage</h3>
-      <ul>
-        <li><strong>Fitawrari Desalegn’s Stone Home</strong> — Where love and tej once flowed freely.</li>
-        <li><strong>Tilahun Gessesse’s Love Home</strong> — The house he sang of in “Feligie Asfeligie.”</li>
-        <li><strong>Grazmach Tasie’s Menelik-Era Restaurant</strong> — A living archive of taste and time.</li>
-        <li><strong>Ras Imru’s Residence</strong> — A symbol of post-Italian rebirth and dignity.</li>
-        <li><strong>Urael, Liben, Menaheria</strong> — Sacred corners now swept by bulldozers.</li>
-      </ul>
+    <section class="contact-form">
+      <form action="https://formspree.io/f/xknldzjk" method="POST">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="_replyto" required />
+
+        <label for="message">Your Message or Testimony</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+      <p class="form-note">We never share your information. Your truth strengthens this archive.</p>
     </section>
 
-    <section class="call">
-      <h3>✊🏾 Join the Campaign</h3>
-      <p>They tried to bury us. But we are the seed. Add your name. Share your story. Help rebuild the homes and hearts of Addis Ababa.</p>
-      <a href="contact.html" class="btn">Contribute</a>
+    <section class="public-contribution">
+      <h3>📬 Want to Submit Photos or Videos?</h3>
+      <p>For larger submissions (images, videos, audio), please email us directly at:</p>
+      <p><strong>kazanchis.archive@protonmail.com</strong></p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Kazanchis Rising | Led by Ras Nahom Aynealem</p>
+    <p>© 2025 Kazanchis Archives. Built on Memory and Resistance.</p>
   </footer>
 </body>
 </html>
