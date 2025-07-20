@@ -2,62 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Testimonies | Addis Ababa Rising</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonies | Kazanchis Rising</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Addis Ababa Rising</h1>
     <nav>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About</a></li>
-        <li><a href="./gallery.html">Gallery</a></li>
-        <li><a href="./testimonies.html" class="active">Testimonies</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="testimonies.html" class="active">Testimonies</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="contact.html">Contact</a>
     </nav>
+    <h1>Voices of Kazanchis</h1>
+    <p>Our truth, our pain, our power.</p>
   </header>
 
   <main>
-    <h2>Hear the Voices</h2>
-    <p>Submit your story and witness history built by the people.</p>
-
-    <form name="testimony-form" method="POST" data-netlify="true">
-      <label for="name">Name (optional):</label>
-      <input id="name" type="text" name="name" />
-
-      <label for="testimony">Your Testimony:</label>
-      <textarea id="testimony" name="testimony" rows="6" required></textarea>
-
-      <button type="submit">Share My Story</button>
-    </form>
-
-    <section>
-      <p>Thank you for standing with us. Your voice matters.</p>
+    <section class="testimony-card">
+      <img src="images/solomon_engish.jpg" alt="Solomon Tesfaye Engish" />
+      <h2>Solomon Tesfaye "Engish"</h2>
+      <p><em>"I was born in Kazanchis. I lived and died with it. We were not just evicted, we were erased."</em></p>
+      <p class="details">Martyred: September 28, 2024 | Age: 42 | Loved for his wit, loyalty, and poetry.</p>
     </section>
 
-    <section class="petition">
-      <h2>Sign the Petition</h2>
-      <p>Join the worldwide call for justice and restoration.</p>
-      <form name="kazanchis-petition" method="POST" data-netlify="true">
-        <label for="p-name">Name:</label>
-        <input id="p-name" name="name" type="text" required />
+    <section class="testimony-card">
+      <img src="images/surafel.jpg" alt="Surafel" />
+      <h2>Surafel</h2>
+      <p><em>"My mother’s bones are buried here. How can you ask me to leave this land?"</em></p>
+      <p class="details">Last seen alive: October 2, 2024 | Remembered for resisting demolition peacefully.</p>
+    </section>
 
-        <label for="p-location">Location:</label>
-        <input id="p-location" name="location" type="text" />
+    <section class="testimony-card">
+      <img src="images/witness1.jpg" alt="Kazanchis Aunt" />
+      <h2>Unnamed Aunt</h2>
+      <p><em>"I cried to the camera, and they dragged me out the next day. I’ve slept on church floors since."</em></p>
+      <p class="details">Evicted from Woreda Hall for speaking out. Survivor of forced demolition.</p>
+    </section>
 
-        <label for="p-message">Message:</label>
-        <textarea id="p-message" name="message" rows="4"></textarea>
-
-        <button type="submit">Sign Petition</button>
-      </form>
+    <section class="testimony-card">
+      <img src="images/getaneh.jpg" alt="Getaneh Bezabih" />
+      <h2>Getaneh Bezabih</h2>
+      <p><em>"We sang on our porches. We held hands during funerals. They didn’t just steal homes—they stole community."</em></p>
+      <p class="details">Beloved elder. One of the last voices preserving oral history of Kazanchis.</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Addis Ababa Rising. All rights reserved.</p>
+    <p>&copy; 2025 Kazanchis Rising. Built by the Displaced. Powered by Truth.</p>
   </footer>
 </body>
 </html>
