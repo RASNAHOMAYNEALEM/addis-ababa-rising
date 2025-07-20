@@ -1,60 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Addis Ababa Rising</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kazanchis Rising — Addis Ababa Remembers</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f0ea;
+      color: #2c2c2c;
+    }
+    header {
+      background-color: #1d1d1d;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Alfa Slab One', cursive;
+      margin: 0;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('images/kazanchis-real.jpg') center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 4px black;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+    .section {
+      padding: 3rem 2rem;
+    }
+    .section h3 {
+      font-family: 'Alfa Slab One';
+      color: #111;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    footer {
+      background-color: #1d1d1d;
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
+
 <body>
   <header>
-    <h1>Addis Ababa Rising</h1>
+    <h1>KAZANCHIS RISING</h1>
     <nav>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html" class="active">About</a></li>
-        <li><a href="./gallery.html">Gallery</a></li>
-        <li><a href="./testimonies.html">Testimonies</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="testimony.html">Testimonies</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <main class="about-section">
-    <section>
-      <h2>Our Mission</h2>
-      <p>
-        We are rebuilding Addis Ababa in spirit—addressing displacement, worshipping heritage, and reclaiming justice.
-      </p>
-    </section>
+  <div class="hero">
+    <h2>እንኳን በደህና መጣህ ፣ ወደ ካዛንቺስ እና ወደ ታሪካዊ አዲስ አበባ።</h2>
+    <p>Where stone and soul built a nation. Where the people remember. This is our resurrection.</p>
+  </div>
 
-    <section>
-      <h2>Who We Are</h2>
-      <p>
-        Survivors, artists, mothers, fighters—from Kazanchis to Piassa. We rise together to rewrite history.
-      </p>
-    </section>
+  <section class="section">
+    <h3>Our Historic Homes</h3>
+    <div class="gallery">
+      <img src="images/fitawrari-desalegn-house.jpg" alt="Fitawrari Desalegn's Stone House">
+      <img src="images/tilahun-gessesse-home.jpg" alt="Tilahun Gessesse's Love House">
+      <img src="images/ras-imru-house.jpg" alt="Ras Imru Haile Selassie's Residence">
+      <img src="images/grazmach-tassie-house.jpg" alt="Grazmach Tassie's Menelik-era Restaurant">
+    </div>
+  </section>
 
-    <section>
-      <h2>What We Do</h2>
-      <ul>
-        <li>Document forced demolitions and displacement</li>
-        <li>Publish testimonies and evidence</li>
-        <li>Design future housing systems rooted in heritage</li>
-        <li>Gather global solidarity</li>
-      </ul>
-    </section>
+  <section class="section">
+    <h3>Remembering the Fallen</h3>
+    <p><strong>Solomon Tesfaye "እንግሽ"</strong> is not forgotten. Neither are Surafel, Mike, Solomon Seifu, Getaneh Bezabih, Kifle Yared, and Girma Tenbola. This city breathes their names. Kazanchis is their story.</p>
+  </section>
 
-    <section>
-      <h2>Why It Matters</h2>
-      <p>
-        Our heritage isn’t disposable; memory is resistance. We are here to remember, resist, and rebuild.
-      </p>
-    </section>
-  </main>
+  <section class="section">
+    <h3>Echoes of Wood & Glass</h3>
+    <p>Zewditu-era homes stood like temples — built of faith, timber, glass and family. This is the Addis we rise to restore. We carry it in design, memory and action.</p>
+    <div class="gallery">
+      <img src="images/zewditu-home-woodglass1.jpg" alt="Wood and Glass House">
+      <img src="images/zewditu-home-woodglass2.jpg" alt="Historic Family Home">
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Addis Ababa Rising. All rights reserved.</p>
+    &copy; 2025 Kazanchis Rising. Built with memory, by the children of Addis Ababa.
   </footer>
 </body>
+
 </html>
