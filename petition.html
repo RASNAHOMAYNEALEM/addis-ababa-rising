@@ -3,47 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sign the Petition | Kazanchis Rising</title>
+  <title>Sign the Petition</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Kazanchis Rising</h1>
+    <h1>Demand Justice</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="testimony.html">Testimonies</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="petition.html" class="active">Sign Petition</a></li>
+        <li><a href="testimonies.html">Testimonies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="petition.html" class="active">Petition</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="petition">
-      <h2>Sign the Petition</h2>
-      <p>We demand justice for the people of Kazanchis and all displaced Ethiopians. Sign your name below to stand with us in truth, dignity, and restoration.</p>
+    <section class="hero">
+      <h2>Sign to Hold Power Accountable</h2>
+      <p>This is an official record. Every name is a testimony. Every name strengthens our case.</p>
+    </section>
 
-      <form name="kazanchis-petition" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="kazanchis-petition" />
-        
-        <label for="name">Full Name *</label>
+    <section class="petition-form">
+      <form action="https://formspree.io/f/xknldzjk" method="POST">
+        <label for="name">Full Name</label>
         <input type="text" id="name" name="name" required />
 
-        <label for="location">City / Country</label>
-        <input type="text" id="location" name="location" />
+        <label for="city">City / Country</label>
+        <input type="text" id="city" name="city" required />
 
-        <label for="message">Message of Solidarity</label>
-        <textarea id="message" name="message" rows="4" placeholder="Your words of support..."></textarea>
+        <label for="message">Message (Optional)</label>
+        <textarea id="message" name="message" rows="4"></textarea>
 
-        <button type="submit">Sign the Petition</button>
+        <button type="submit">Add My Name</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Kazanchis Rising. All rights reserved.</p>
+    <p>© 2025 Kazanchis Archives. Power must be answerable to the people.</p>
   </footer>
 </body>
 </html>
