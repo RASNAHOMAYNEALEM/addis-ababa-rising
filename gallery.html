@@ -5,6 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gallery – Addis Ababa Rising</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .gallery img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .caption {
+      text-align: center;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -20,28 +43,28 @@
       </ul>
     </nav>
     <h1>Gallery</h1>
-    <p>Memories of homes, heritage, and the lives that once flourished in Addis Ababa.</p>
+    <p>Scenes from the homes and heritage erased—but never forgotten.</p>
   </header>
 
   <main>
-    <div class="gallery">
-      <div class="image-card">
-        <img src="images/fitawrari-atnafseged-house.jpg" alt="Libe Fana - Fitawrari Atnafseged’s House" />
-        <p>Libe Fana - Fitawrari Atnafseged’s House</p>
+    <section class="gallery">
+      <div>
+        <img src="images/fitawrari-atnafseged-house.jpg" alt="Libe Fana - Fitawrari Atnafseged’s House">
+        <div class="caption">Libe Fana - Fitawrari Atnafseged’s House</div>
       </div>
-      <div class="image-card">
-        <img src="images/tilahun-gessese-love-home.jpg" alt="Felige Asfeligie - Tilahun Gessese’s Love Home" />
-        <p>Felige Asfeligie - Tilahun Gessese’s Love Home</p>
+      <div>
+        <img src="images/tilahun-gessese-love-home.jpg" alt="Felige Asfeligie - Tilahun Gessese’s Love Home">
+        <div class="caption">Felige Asfeligie - Tilahun Gessese’s Love Home</div>
       </div>
-      <div class="image-card">
-        <img src="images/ras-imru-house.jpg" alt="Imru Heights - Ras Imru’s Post-Occupation Residence" />
-        <p>Imru Heights - Ras Imru’s Post-Occupation Residence</p>
+      <div>
+        <img src="images/ras-imru-house.jpg" alt="Imru Heights - Ras Imru’s Post-Occupation Residence">
+        <div class="caption">Imru Heights - Ras Imru’s Post-Occupation Residence</div>
       </div>
-      <div class="image-card">
-        <img src="images/grazmach-tasie-house.jpg" alt="Tasie Corner - Grazmach Tasie’s Menelik-Era House" />
-        <p>Tasie Corner - Grazmach Tasie’s Menelik-Era House</p>
+      <div>
+        <img src="images/grazmach-tasie-house.jpg" alt="Tasie Corner - Grazmach Tasie’s Menelik-Era House">
+        <div class="caption">Tasie Corner - Grazmach Tasie’s Menelik-Era House</div>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer>
