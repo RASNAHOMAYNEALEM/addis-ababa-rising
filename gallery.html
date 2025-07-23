@@ -4,71 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gallery – Addis Ababa Rising</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    .gallery img {
-      max-width: 300px;
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    .caption {
-      text-align: center;
-      font-weight: 600;
-      margin-top: 8px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="testimonies.html">Testimonies</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="reconstruction.html">Reconstruction</a></li>
+      <li><a href="memorial.html">Memorial</a></li>
+      <li><a href="contribute.html">Contribute</a></li>
+    </ul>
+  </nav>
+
   <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="testimonies.html">Testimonies</a></li>
-        <li><a href="legal-case.html">Legal Case</a></li>
-        <li><a href="gallery.html" class="active">Gallery</a></li>
-        <li><a href="reconstruction.html">Reconstruction</a></li>
-        <li><a href="memorial.html">Memorial</a></li>
-        <li><a href="contribute.html">Contribute</a></li>
-      </ul>
-    </nav>
-    <h1>Gallery</h1>
-    <p>Scenes from the homes and heritage erased—but never forgotten.</p>
+    <h1>Gallery of Our Struggle & Beauty</h1>
+    <p>Photos of the people, homes, and streets we fight to preserve.</p>
   </header>
 
-  <main>
-    <section class="gallery">
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Traditional_Ethiopian_house.jpg/640px-Traditional_Ethiopian_house.jpg" alt="Libe Fana - Fitawrari Atnafseged’s House">
-        <div class="caption">Libe Fana - Fitawrari Atnafseged’s House</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tilahun_Gessesse_2004.jpg/480px-Tilahun_Gessesse_2004.jpg" alt="Felige Asfeligie - Tilahun Gessese’s Love Home">
-        <div class="caption">Felige Asfeligie - Tilahun Gessese’s Love Home</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Ras_Imru_Haile_Selassie_1934.jpg/480px-Ras_Imru_Haile_Selassie_1934.jpg" alt="Imru Heights - Ras Imru’s Post-Occupation Residence">
-        <div class="caption">Imru Heights - Ras Imru’s Post-Occupation Residence</div>
-      </div>
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Addis_Ababa_city_view_2.jpg/640px-Addis_Ababa_city_view_2.jpg" alt="Tasie Corner - Grazmach Tasie’s Menelik-Era House">
-        <div class="caption">Tasie Corner - Grazmach Tasie’s Menelik-Era House</div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Addis Ababa Rising. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+  <main class="gallery-grid">
+    <div class="gallery-item">
+      <img src="images/tilahun.jpg" alt="Tilahun Gessese's home">
+      <p>Tilahun Gess
