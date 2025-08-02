@@ -109,3 +109,12 @@ footer {
     font-size: 1.5rem;
   }
 }
+/* Image Styling */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover; /* Optionally keeps the aspect ratio */
+}
+
