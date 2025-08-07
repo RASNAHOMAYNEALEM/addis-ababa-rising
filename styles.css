@@ -1,122 +1,114 @@
-/* General Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Image Styling */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  object-fit: cover; /* Optionally keeps the aspect ratio */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #1b1b1b;
+  color: #fff;
+  line-height: 1.6;
 }
 
-/* Body & Typography */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fefefe;
-  color: #222;
-  line-height: 1.6;
-  padding: 0;
-  margin: 0;
+/* Royal Color Palette */
+:root {
+  --royal-gold: #d4af37;
+  --ethiopian-green: #078930;
+  --ethiopian-red: #da1212;
+  --ethiopian-yellow: #fcd116;
+  --deep-black: #000;
 }
 
 /* Header */
 header {
-  background-color: #111;
-  color: #fff;
-  padding: 2rem 1rem;
+  background: linear-gradient(to right, var(--ethiopian-green), var(--ethiopian-yellow), var(--ethiopian-red));
+  padding: 20px;
   text-align: center;
-}
-
-header h1 {
+  color: var(--deep-black);
   font-size: 2rem;
-  margin-bottom: 0.5rem;
-  letter-spacing: 1px;
+  font-weight: bold;
+  border-bottom: 5px solid var(--royal-gold);
 }
 
-nav ul {
-  list-style: none;
+/* Hero Section */
+.hero {
+  background-image: url('assets/the-k-files/lion-banner.jpg'); /* Change to your real path */
+  background-size: cover;
+  background-position: center;
+  height: 400px;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: var(--royal-gold);
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  background: var(--deep-black);
+  padding: 10px;
 }
 
 nav a {
-  color: #ddd;
+  color: var(--royal-gold);
+  margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #fbbf24;
+  color: var(--ethiopian-yellow);
 }
 
-/* Main Gallery Section */
+/* Gallery */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  background-color: #111;
 }
 
-/* Image Cards */
-figure {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-figure:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-figure img {
+.gallery img {
   width: 100%;
-  height: auto;
-  display: block;
+  border: 3px solid var(--royal-gold);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
 }
 
-/* Captions */
-figcaption {
-  padding: 1rem;
-  font-size: 0.95rem;
-  color: #444;
-  background-color: #f9f9f9;
-  border-top: 1px solid #eee;
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Memorial Section */
+.memorial {
+  padding: 40px;
+  background: #222;
+  text-align: center;
+}
+
+.memorial h2 {
+  color: var(--ethiopian-yellow);
+  margin-bottom: 20px;
+}
+
+.memorial p {
+  font-style: italic;
 }
 
 /* Footer */
 footer {
-  background-color: #111;
-  color: #bbb;
+  background-color: #000;
+  color: var(--ethiopian-yellow);
   text-align: center;
-  padding: 1rem;
-  font-size: 0.8rem;
-  margin-top: 3rem;
+  padding: 10px;
+  font-size: 0.9rem;
 }
-
-/* Responsive */
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  header h1 {
-    font-size: 1.5rem;
-  }
-}
-
-
