@@ -35,19 +35,91 @@
     <article>
       share a memory, testimony, or photo. Reach out — this archive lives because of you.
       
-    <section class="contact-form">
-      <form action="https://formspree.io/f/xknldzjk" method="POST">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required />
+      <section class="contact-form">
+  <form id="contactForm" action="https://formspree.io/f/xknldzjk" method="POST">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" required />
 
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="_replyto" required />
+    <label for="email">Your Email</label>
+    <input type="email" id="email" name="_replyto" required />
 
-        <label for="message">Your Message or Testimony</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
+    <label for="message">Your Message or Testimony</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
 
-        <button type="submit">Send Message</button>
-      </form>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <!-- status area -->
+  <div id="formStatus" role="status" aria-live="polite" style="margin-top:12px;color:#333;"></div>
+
+  <p class="form-note">We never share your information. Your truth strengthens this archive.</p>
+</section>
+
+<script>
+/* Robust Formspree submit + Gmail fallback */
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    status.textContent = 'Sending…';
+    const url = form.action; // keep the formspree action attribute as-is
+    const fd = new FormData(form);
+
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        body: fd,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        status.style.color = 'green';
+        status.textContent = 'Thank you — your message was sent.';
+        form.reset();
+        return;
+      }
+
+      // non-ok response (404 / form-not-found / server error)
+      const respText = await res.text().catch(() => '');
+      console.error('Formspree returned non-ok:', res.status, respText);
+
+      status.style.color = '#b33';
+      status.innerHTML = 'Submission failed (Formspree). Opening Gmail compose as a fallback so you can send your message quickly.';
+
+      // Build fallback Gmail compose URL with form content
+      const to = 'kazanchisrising@gmail.com';
+      const subject = encodeURIComponent('Testimony / Contact — Addis Ababa Rising');
+      const bodyText =
+        'Name: ' + (fd.get('name') || '') + '\n' +
+        'Email: ' + (fd.get('_replyto') || '') + '\n\n' +
+        (fd.get('message') || '');
+      const body = encodeURIComponent(bodyText);
+
+      // open Gmail compose in new tab
+      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`, '_blank');
+
+    } catch (err) {
+      console.error('Network error submitting form:', err);
+      status.style.color = '#b33';
+      status.innerHTML = 'Network error. Opening Gmail compose as fallback...';
+
+      // fallback gmail compose
+      const fd2 = new FormData(form);
+      const to = 'kazanchisrising@gmail.com';
+      const subject = encodeURIComponent('Testimony / Contact — Addis Ababa Rising');
+      const bodyText =
+        'Name: ' + (fd2.get('name') || '') + '\n' +
+        'Email: ' + (fd2.get('_replyto') || '') + '\n\n' +
+        (fd2.get('message') || '');
+      const body = encodeURIComponent(bodyText);
+      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`, '_blank');
+    }
+  });
+});
+</script>
+
       <p class="form-note">We never share your information. Your truth strengthens this archive.</p>
     </section>
 
@@ -69,6 +141,6 @@
     </article>
   </main>
 
-  <footer class="aar-footer"><small>© Addis Ababa Rising — Contact. Built on Memory and Resistance.እንገናኛለን።</small></footer>
+  <footer class="aar-footer"><small>© Addis Ababa Rising — Contact. Built on Memory and Resistance. እንገናኛለን።</small></footer>
 </body>
 </html>
