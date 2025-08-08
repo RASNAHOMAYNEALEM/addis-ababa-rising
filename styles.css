@@ -1,46 +1,178 @@
-body {
-    margin: 0;
-    font-family: 'Noto Serif Ethiopic', serif;
-    background-color: #f5f0e1;
-    color: #2d2d2d;
+:root{
+  --gold: #d4af37;
+  --ethiopian-green: #078930;
+  --ethiopian-red: #d11111;
+  --bg: #fbf8f2;
+  --text: #222;
+  --nav-dark: #0d0d0d;
 }
 
-header {
-    background: linear-gradient(to right, #006b3f, #ffcd00, #d91023);
-    padding: 20px;
-    text-align: center;
-    color: white;
-    font-size: 2em;
-    font-weight: bold;
-    border-bottom: 10px solid #ffcd00;
+*{box-sizing:border-box}
+
+body.aar{
+  margin:0;
+  font-family: "Noto Serif Ethiopic", Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-.lion-bg {
-    background-image: url('assets/images/ChatGPT Image Aug 8, 2025, 03_14_35 PM.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: 300px;
+/* Watermark (Lion of Judah) — exact path encoded for your uploaded file */
+.lion-bg::before{
+  content:"";
+  position:fixed;
+  left:50%;
+  top:40%;
+  transform:translate(-50%,-50%);
+  width:min(60vw,720px);
+  height:auto;
+  aspect-ratio:1/1;
+  background-image: url('assets/images/ChatGPT%20Image%20Aug%208%2C%202025%2C%2003_14_35%20PM.png');
+  background-size:contain;
+  background-repeat:no-repeat;
+  opacity:0.06;
+  pointer-events:none;
+  z-index:0;
 }
 
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+/* Header & nav */
+.aar-header{
+  position:relative;
+  z-index:2;
+  background: linear-gradient(90deg, var(--ethiopian-green), #f7d75a, var(--ethiopian-red));
+  color:#fff;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
-.image-grid img {
-    width: 100%;
-    height: auto;
-    border: 12px solid #ffcd00;
-    padding: 5px;
-    background: white;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);
-    transition: transform 0.3s;
+.brand a{
+  text-decoration:none;
+  color:#fff;
+  font-weight:700;
+  font-size:1.2rem;
+  letter-spacing:0.02em;
 }
 
-.image-grid img:hover {
-    transform: scale(1.05);
+.main-nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.main-nav a{
+  display:inline-block;
+  padding:8px 12px;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:600;
+  transition: background .18s, color .18s;
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"]{
+  background: rgba(255,255,255,0.12);
+  color:#fff;
+}
+
+/* Page container */
+.container{
+  max-width:1200px;
+  margin:28px auto;
+  padding:0 18px;
+  position:relative;
+  z-index:2;
+}
+
+/* Hero */
+.page-hero .title{
+  margin:0 0 6px;
+  font-size:2rem;
+  color:var(--nav-dark);
+}
+
+.page-hero .lead{
+  margin:0 0 16px;
+  color:#444;
+}
+
+/* Image grid */
+.image-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:20px;
+  align-items:start;
+}
+
+/* photo card with Ethiopian corner ornaments */
+.photo{
+  position:relative;
+  display:block;
+  background: #fff;
+  padding:8px;
+  border:8px solid var(--gold);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  overflow:visible;
+}
+
+.photo img{
+  display:block;
+  width:100%;
+  height:auto; /* keep proportions */
+  object-fit:contain;
+  border-radius:4px;
+  background:#fff;
+}
+
+/* Corner ornaments: top-left (green) and bottom-right (red) */
+.photo::before,
+.photo::after{
+  content:"";
+  position:absolute;
+  width:20px;
+  height:20px;
+  transform:rotate(45deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  border-radius:2px;
+}
+
+.photo::before{
+  top:-12px;
+  left:-12px;
+  background: linear-gradient(135deg, var(--ethiopian-green) 0 50%, var(--gold) 50% 100%);
+}
+
+.photo::after{
+  bottom:-12px;
+  right:-12px;
+  background: linear-gradient(315deg, var(--ethiopian-red) 0 50%, var(--gold) 50% 100%);
+}
+
+/* Hover */
+.photo:hover{
+  transform: translateY(-6px);
+  transition: transform .22s ease;
+}
+
+/* Footer */
+.aar-footer{
+  text-align:center;
+  padding:18px 12px;
+  color:#333;
+  background:transparent;
+}
+
+/* Responsive tweaks */
+@media (max-width:700px){
+  .aar-header{ padding:12px 12px; }
+  .main-nav ul{ gap:6px; }
+  .page-hero .title{ font-size:1.5rem; }
 }
