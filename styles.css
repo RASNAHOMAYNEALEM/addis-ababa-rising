@@ -1,31 +1,33 @@
 :root{
-  --gold: #d4af37;
-  --ethiopian-green: #078930;
-  --ethiopian-red: #d11111;
-  --bg: #fbf8f2;
-  --text: #222;
-  --nav-dark: #0d0d0d;
+  --gold:#d4af37;
+  --ethiopian-green:#078930;
+  --ethiopian-red:#d11111;
+  --bg:#fbf8f2;
+  --text:#222;
+  --nav-dark:#0d0d0d;
+  --card-pad:14px;
 }
 
 *{box-sizing:border-box}
-
-body.aar{
+html,body{height:100%}
+body{
   margin:0;
-  font-family: "Noto Serif Ethiopic", Georgia, serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family:"Noto Serif Ethiopic", Georgia, serif;
+  background:var(--bg);
+  color:var(--text);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
 }
 
-/* Watermark (Lion of Judah) — exact path encoded for your uploaded file */
+/* Global watermark (Lion of Judah) */
 .lion-bg::before{
   content:"";
   position:fixed;
   left:50%;
-  top:40%;
+  top:45%;
   transform:translate(-50%,-50%);
-  width:min(60vw,720px);
+  width:min(60vw,900px);
   height:auto;
   aspect-ratio:1/1;
   background-image: url('assets/images/ChatGPT%20Image%20Aug%208%2C%202025%2C%2003_14_35%20PM.png');
@@ -39,10 +41,10 @@ body.aar{
 /* Header & nav */
 .aar-header{
   position:relative;
-  z-index:2;
+  z-index:3;
   background: linear-gradient(90deg, var(--ethiopian-green), #f7d75a, var(--ethiopian-red));
   color:#fff;
-  padding:14px 18px;
+  padding:12px 18px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -53,8 +55,8 @@ body.aar{
 .brand a{
   text-decoration:none;
   color:#fff;
-  font-weight:700;
-  font-size:1.2rem;
+  font-weight:800;
+  font-size:1.1rem;
   letter-spacing:0.02em;
 }
 
@@ -63,7 +65,7 @@ body.aar{
   margin:0;
   padding:0;
   display:flex;
-  gap:10px;
+  gap:8px;
   flex-wrap:wrap;
 }
 
@@ -75,6 +77,7 @@ body.aar{
   border-radius:6px;
   font-weight:600;
   transition: background .18s, color .18s;
+  font-size:0.95rem;
 }
 
 .main-nav a:hover,
@@ -83,7 +86,7 @@ body.aar{
   color:#fff;
 }
 
-/* Page container */
+/* Container */
 .container{
   max-width:1200px;
   margin:28px auto;
@@ -93,86 +96,97 @@ body.aar{
 }
 
 /* Hero */
-.page-hero .title{
-  margin:0 0 6px;
+.page-hero{
+  margin-bottom:18px;
+}
+.title{
+  margin:8px 0 6px;
   font-size:2rem;
   color:var(--nav-dark);
 }
+.lead{ margin:0 0 12px; color:#444; }
 
-.page-hero .lead{
-  margin:0 0 16px;
-  color:#444;
-}
-
-/* Image grid */
+/* Image grid: make images larger */
 .image-grid{
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap:20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap:26px;
   align-items:start;
 }
 
-/* photo card with Ethiopian corner ornaments */
+/* Photo card with Ge'ez-style corner SVGs (data URI) */
 .photo{
   position:relative;
   display:block;
-  background: #fff;
-  padding:8px;
-  border:8px solid var(--gold);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  background:#fff;
+  padding: var(--card-pad);
+  border:10px solid var(--gold);
+  border-radius:8px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
   overflow:visible;
 }
 
+/* image sizing */
 .photo img{
   display:block;
   width:100%;
-  height:auto; /* keep proportions */
-  object-fit:contain;
+  height:auto;
+  object-fit:cover;
   border-radius:4px;
   background:#fff;
 }
 
-/* Corner ornaments: top-left (green) and bottom-right (red) */
+/* figure caption */
+figcaption{
+  margin-top:10px;
+  font-size:0.95rem;
+  color:#333;
+}
+
+/* Ge'ez corner ornament - top-left and bottom-right using SVG data-URIs */
 .photo::before,
 .photo::after{
   content:"";
   position:absolute;
-  width:20px;
-  height:20px;
-  transform:rotate(45deg);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-  border-radius:2px;
+  width:46px;
+  height:46px;
+  background-repeat:no-repeat;
+  background-size:contain;
+  pointer-events:none;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
 }
 
+/* top-left ornament (green+gold) */
 .photo::before{
-  top:-12px;
-  left:-12px;
-  background: linear-gradient(135deg, var(--ethiopian-green) 0 50%, var(--gold) 50% 100%);
+  left:-22px;
+  top:-22px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><defs><linearGradient id='g' x1='0' x2='1'><stop offset='0' stop-color='%23078930'/><stop offset='1' stop-color='%23d4af37'/></linearGradient></defs><path d='M10 100 L10 40 C40 10 80 10 110 40 L110 100 Z' fill='url(%23g)' stroke='%23b8872a' stroke-width='2'/></svg>");
+  transform:rotate(0deg);
 }
 
+/* bottom-right ornament (red+gold) */
 .photo::after{
-  bottom:-12px;
-  right:-12px;
-  background: linear-gradient(315deg, var(--ethiopian-red) 0 50%, var(--gold) 50% 100%);
+  right:-22px;
+  bottom:-22px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><defs><linearGradient id='g2' x1='0' x2='1'><stop offset='0' stop-color='%23d11111'/><stop offset='1' stop-color='%23d4af37'/></linearGradient></defs><path d='M110 20 L110 80 C80 110 40 110 10 80 L10 20 Z' fill='url(%23g2)' stroke='%23b8872a' stroke-width='2'/></svg>");
+  transform:rotate(0deg);
 }
 
-/* Hover */
-.photo:hover{
-  transform: translateY(-6px);
-  transition: transform .22s ease;
-}
+/* hover lift */
+.photo:hover{ transform:translateY(-6px); transition:transform .22s ease; }
 
-/* Footer */
+/* footer */
 .aar-footer{
   text-align:center;
   padding:18px 12px;
   color:#333;
-  background:transparent;
+  margin-top:34px;
 }
 
-/* Responsive tweaks */
+/* responsive */
 @media (max-width:700px){
-  .aar-header{ padding:12px 12px; }
-  .main-nav ul{ gap:6px; }
-  .page-hero .title{ font-size:1.5rem; }
+  .aar-header{ padding:10px; }
+  .main-nav a{ padding:8px 8px; font-size:0.9rem; }
+  .image-grid{ gap:16px; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
+  .photo::before, .photo::after{ width:34px; height:34px; left:-16px; top:-16px; right:-16px; bottom:-16px; }
 }
