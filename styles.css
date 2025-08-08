@@ -1,114 +1,46 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Georgia', serif;
-  background-color: #1b1b1b;
-  color: #fff;
-  line-height: 1.6;
+    margin: 0;
+    font-family: 'Noto Serif Ethiopic', serif;
+    background-color: #f5f0e1;
+    color: #2d2d2d;
 }
 
-/* Royal Color Palette */
-:root {
-  --royal-gold: #d4af37;
-  --ethiopian-green: #078930;
-  --ethiopian-red: #da1212;
-  --ethiopian-yellow: #fcd116;
-  --deep-black: #000;
-}
-
-/* Header */
 header {
-  background: linear-gradient(to right, var(--ethiopian-green), var(--ethiopian-yellow), var(--ethiopian-red));
-  padding: 20px;
-  text-align: center;
-  color: var(--deep-black);
-  font-size: 2rem;
-  font-weight: bold;
-  border-bottom: 5px solid var(--royal-gold);
+    background: linear-gradient(to right, #006b3f, #ffcd00, #d91023);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    border-bottom: 10px solid #ffcd00;
 }
 
-/* Hero Section */
-.hero {
-  background-image: url('assets/the-k-files/lion-banner.jpg'); /* Change to your real path */
-  background-size: cover;
-  background-position: center;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 2px 2px 4px #000;
+.lion-bg {
+    background-image: url('assets/images/ChatGPT Image Aug 8, 2025, 03_14_35 PM.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 300px;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  color: var(--royal-gold);
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
-/* Navigation */
-nav {
-  display: flex;
-  justify-content: center;
-  background: var(--deep-black);
-  padding: 10px;
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border: 12px solid #ffcd00;
+    padding: 5px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);
+    transition: transform 0.3s;
 }
 
-nav a {
-  color: var(--royal-gold);
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: var(--ethiopian-yellow);
-}
-
-/* Gallery */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  padding: 20px;
-  background-color: #111;
-}
-
-.gallery img {
-  width: 100%;
-  border: 3px solid var(--royal-gold);
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* Memorial Section */
-.memorial {
-  padding: 40px;
-  background: #222;
-  text-align: center;
-}
-
-.memorial h2 {
-  color: var(--ethiopian-yellow);
-  margin-bottom: 20px;
-}
-
-.memorial p {
-  font-style: italic;
-}
-
-/* Footer */
-footer {
-  background-color: #000;
-  color: var(--ethiopian-yellow);
-  text-align: center;
-  padding: 10px;
-  font-size: 0.9rem;
+.image-grid img:hover {
+    transform: scale(1.05);
 }
