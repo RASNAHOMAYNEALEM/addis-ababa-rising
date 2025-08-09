@@ -190,3 +190,27 @@ figcaption{
   .image-grid{ gap:16px; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
   .photo::before, .photo::after{ width:34px; height:34px; left:-16px; top:-16px; right:-16px; bottom:-16px; }
 }
+
+#flagOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/images/lion_of_judah_flag.png') center center / cover no-repeat;
+  opacity: 0;
+  animation: none;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+#flagOverlay.visible {
+  animation: fadeInWave 2s ease-in-out;
+}
+
+@keyframes fadeInWave {
+  0% { opacity: 0; transform: scale(1.1) translateY(-20px); }
+  20% { opacity: 0.8; transform: scale(1) translateY(0); }
+  80% { opacity: 0.8; }
+  100% { opacity: 0; transform: scale(0.9) translateY(20px); }
+}
