@@ -6,6 +6,34 @@
   <title>Addis Ababa Rising — Reconstruction</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Ethiopic&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+<style>
+  .share-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: inline-flex;
+    align-items: center;
+    background: #d4af37; /* Ethiopian gold tone */
+    color: white;
+    padding: 12px 16px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+    z-index: 9999;
+  }
+  .share-btn:hover {
+    background: #b8932f;
+    transform: scale(1.05);
+  }
+  .share-btn svg {
+    margin-right: 8px;
+  }
+</style>
+
 </head>
 <body class="aar lion-bg">
   <header class="aar-header">
