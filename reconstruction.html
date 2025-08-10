@@ -45,5 +45,31 @@
   </main>
 
   <footer class="aar-footer"><small>© Addis Ababa Rising — Reconstruction 2025 Kazanchis Archives. All Rights Reserved.</small></footer>
+<!-- Floating Share Button -->
+<button class="share-btn" onclick="shareSite()">
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 16 16">
+    <path d="M13.5 1a1.5 1.5 0 1 1-1.415 1.001H9.9a.5.5 0 0 0-.354.146L4.854 6.838a.5.5 0 0 0 0 .707l4.692 4.692a.5.5 0 0 0 .354.146h2.186A1.5 1.5 0 1 1 13.5 15a1.5 1.5 0 0 1-1.415-1.001H9.9a1.5 1.5 0 0 1-1.06-.44L4.146 8.94a1.5 1.5 0 0 1 0-2.12l4.692-4.692A1.5 1.5 0 0 1 9.9 1.5h2.186A1.5 1.5 0 0 1 13.5 1z"/>
+  </svg>
+  Share
+</button>
+
+<script>
+  function shareSite() {
+    const shareData = {
+      title: 'Addis Ababa Rising',
+      text: 'Remembering the victims and history of Kazanchis. Join us and share.',
+      url: window.location.href
+    };
+
+    if (navigator.share) {
+      navigator.share(shareData).catch(err => console.log('Share failed:', err));
+    } else {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert("📋 Link copied! Share it with your friends.");
+      });
+    }
+  }
+</script>
+
 </body>
 </html>
